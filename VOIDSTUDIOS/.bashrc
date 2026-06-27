@@ -11,7 +11,13 @@ alias rip-mp4='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"'
 alias rip-mp3='yt-dlp -x --audio-format mp3'
 alias bluetooth='blueman-manager'
 alias compile='nasm -f elf64'
-alias ldu='cd ~/CODE/PYTHON/PROGRAMS/LDU && sudo python3 ldu.py && cd'
+
+ldu() {
+    cd ~/CODE/PYTHON/PROGRAMS/LDU || return
+    sudo python3 ldu.py
+    cd
+}
+
 echo 'Copyright Void Studios Source Program 202X'
 
 command_not_found_handle() {
